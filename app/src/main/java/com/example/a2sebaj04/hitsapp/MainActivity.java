@@ -26,8 +26,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
             HttpURLConnection conn = null;
             try
             {
-                URL url = new URL("http://www.free-map.org.uk/course/mad/ws/hits.php?artist=" + input[0]
-                    +"&format=" + input[1]);
+                URL url = new URL("http://www.free-map.org.uk/course/mad/ws/hits.php?artist=" + input[0] +
+                        "&format=" + input[1]);
                 conn = (HttpURLConnection) url.openConnection();
                 InputStream in = conn.getInputStream();
                 if(conn.getResponseCode() == 200)
@@ -75,6 +75,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
         EditText et = (EditText)findViewById(R.id.et1);
         String artist = et.getText().toString();
         MyTask t = new MyTask();
-        t.execute(artist, "json");
+        t.execute(artist, "text"); // Q3
     }
 }
